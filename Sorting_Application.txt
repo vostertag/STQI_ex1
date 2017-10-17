@@ -1,0 +1,5 @@
+INPUT METHODS	
+The input options for the user would be:
+An array of integers. (If there is a non-integer, an error message is displayed)
+A string of integers, either by console or as an independent variable. (If it can't be converted to an array, it checks if it is a file name)
+A file, with numbers separated by spaces. (If it can't recognise a pattern an error message is displayed)

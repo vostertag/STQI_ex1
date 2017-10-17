@@ -1,11 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 17 15:46:10 2017
 
-@author: victor
-"""
 
-from Sorter import Sorter
 
-def test(sorter):
+
+def checkSorting(array):
+    for i in range(len(array) - 1):
+        if array[i] > array[i+1]:
+            print("The array is not sorted correctly")
+            return False
     
+    return True
+
