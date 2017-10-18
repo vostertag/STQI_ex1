@@ -18,6 +18,8 @@ class Input:
             self.checkArray(userInput)
         elif type(userInput) is str:
             self.checkString(userInput)
+        else:
+            raise TypeError("Invalid Input")
         
         
     def checkString(self, userInput):
@@ -25,22 +27,21 @@ class Input:
             self.array = [int(x) for x in userInput.split(",")]
         except:
             file = Path(userInput)
-            print(file)
             if file.is_file():
                 if not userInput.endswith(".txt"):
-                    print("File must be .txt")
+                    raise ValueError("File must be .txt")
                 else:
                     file = open(userInput,'r').read()
                     try:
                         self.array = [int(x) for x in file.split(" ")]
                     except:
-                        sys.exit("The file is not in the right format")
+                        raise ValueError("The file is not in the right format")
             else:
-                sys.exit("Something went wrong when you typed in the array or the file does not exists")
+                raise ValueError("Something went wrong when you typed in the array or the file does not exist")
     
     def checkArray(self, userInput):
         if any(not isinstance(x, int) for x in userInput):
-            sys.exit("The array should only have ints.")
+            raise ValueError("The array should only have ints.")
         else:
             self.array = userInput
             

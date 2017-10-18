@@ -7,7 +7,7 @@ Created on Tue Oct 17 14:36:07 2017
 
 from Sorter import Sorter
 
-sorter = Sorter("array.txt")
+sorter = Sorter([5,9,7,2,6,1])
 sorter.sort()
 print(sorter.getToSort())
 print(sorter.getSorted())
